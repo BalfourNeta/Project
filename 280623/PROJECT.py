@@ -381,8 +381,7 @@ def main():
            teacher_name = input("Enter your name: ")
            teacher_email = input("Enter your email address: ")
            teacher_subject = input("Enter the subject you teach (Math/English): ")
-           option = " "
-           while option != "3":
+           while true:
                teacher_info(teacher_name, teacher_email, teacher_subject)
                print("\nChoose an option:")
                print("1. Add a task")
@@ -418,8 +417,7 @@ def main():
                save_user_info(student_name, email, 'student', {'grade': grade, 'class_number': class_number, 'schedule': schedule})
 
 
-           option = " "
-           while (option != "6"):
+           while true:
                print("\nChoose an option:")
                print("1. Add a task")
                print("2. Mark task as completed")
