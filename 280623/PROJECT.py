@@ -410,34 +410,37 @@ def main():
                         schedule[day][hour] = subject
                 # Save student information
                 save_user_info(student_name, email, 'student', {'grade': grade, 'class_number': class_number, 'schedule': schedule})
-            print("\nChoose an option:")
-            print("1. Add a task")
-            print("2. Mark task as completed")
-            print("3. See completed tasks")
-            print("4. See schedule")
-            print("5. See all tasks")
-            print("6. Exit")
-            option = input("Enter your choice (1/2/3/4/5/6): ")
-            if option == "1":
-                add_task_for_student(student_name)
-            elif option == "2":
-                mark_task_as_completed(student_name)
-            elif option == "3":
-                display_completed_tasks(student_name)
-            elif option == "4":
-                display_schedule(student_name)
-            elif option == "5":
-                display_tasks(student_name)
-            elif option == "6":
-                print("Exiting.")
+
+            option = 0
+            while (option != 6):
+                print("\nChoose an option:")
+                print("1. Add a task")
+                print("2. Mark task as completed")
+                print("3. See completed tasks")
+                print("4. See schedule")
+                print("5. See all tasks")
+                print("6. Exit")
+                option = input("Enter your choice (1/2/3/4/5/6): ")
+                if option == "1":
+                    add_task_for_student(student_name)
+                elif option == "2":
+                    mark_task_as_completed(student_name)
+                elif option == "3":
+                    display_completed_tasks(student_name)
+                elif option == "4":
+                    display_schedule(student_name)
+                elif option == "5":
+                    display_tasks(student_name)
+                elif option == "6":
+                    print("Exiting.")
+                    break
+                else:
+                    print("Invalid option. Please enter a number between 1 and 6.")
+            elif user_type.lower() == "exit":
+                print("Exiting the program.")
                 break
             else:
-                print("Invalid option. Please enter a number between 1 and 6.")
-        elif user_type.lower() == "exit":
-            print("Exiting the program.")
-            break
-        else:
-            print("Invalid choice. Please enter 'teacher', 'student', or 'exit'.")
+                print("Invalid choice. Please enter 'teacher', 'student', or 'exit'.")
 
 
 if __name__ == "__main__":
