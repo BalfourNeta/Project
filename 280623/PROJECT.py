@@ -237,7 +237,7 @@ def add_task_for_teacher(teacher_subject):
    give_task = input("Do you want to give a task for one of your classes? (yes/no): ")
    if give_task.lower() == "yes":
        grade_number = int(input("Enter the grade to give a task to (10/11/12): "))
-       if teacher_subject.lower() == "Math" and teacher_subject.lower() == "English":
+       if teacher_subject.lower() == "Math" or teacher_subject.lower() == "English":
            unit_number=int(input("Enter the unit number to give a task to: "))
        class_number = input("Enter the classes number to give a task to:(comma-separated): ").split(',')
        class_number = [int(c) for c in class_number]
