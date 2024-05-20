@@ -316,7 +316,7 @@ def main():
                 print("3. Exit")
                 option = input("Enter your choice (1/2/3): ")
                 if option == "1":
-                    add_task_for_teacher()
+                    add_task_for_teacher(teacher_subject)
                 elif option == "2":
                     display_teacher_tasks(teacher_name, teacher_email)
                 elif option == "3":
