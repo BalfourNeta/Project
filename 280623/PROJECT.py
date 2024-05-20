@@ -163,7 +163,7 @@ def teacher_info():
         save_user_info(teacher_name, teacher_email, 'teacher', info)
 
 
-def add_task_for_teacher():
+def add_task_for_teacher(teacher_subject):
     give_task = input("Do you want to give a task for one of your classes? (yes/no): ")
     if give_task.lower() == "yes":
         grade_number = int(input("Enter the grade to give a task to (10/11/12): "))
