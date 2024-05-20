@@ -1,15 +1,11 @@
 import json
 
-
 # Dictionary to store tasks assigned by teachers
 tasks = {}
 
 
 # Dictionary to store user information
 users_info = {}
-
-
-
 
 class ClassInstance:
    def __init__(self, major1, major2, points_math, points_english):
@@ -26,9 +22,6 @@ class ClassInstance:
            'points_math': self.points_math,
            'points_english': self.points_english
        }
-
-
-
 
 def create_class_instance():
    while True:
@@ -51,9 +44,6 @@ def create_class_instance():
 
    return ClassInstance(major1, major2, points_math, points_english)
 
-
-
-
 def create_classes_for_grade(grade, num_classes):
    classes = []
    print(f"\nFor grade {grade}:")
@@ -61,9 +51,6 @@ def create_classes_for_grade(grade, num_classes):
        class_instance = create_class_instance()
        classes.append(class_instance)
    return classes
-
-
-
 
 def save_user_info(name, email, user_type, info):
    if name in users_info and email in users_info[name]:
@@ -80,9 +67,6 @@ def save_user_info(name, email, user_type, info):
    with open("users_info.json", "w") as json_file:
        json.dump(users_info, json_file)
 
-
-
-
 def load_users_info():
    try:
        with open("users_info.json", "r") as json_file:
@@ -90,18 +74,12 @@ def load_users_info():
    except FileNotFoundError:
        return {}
 
-
-
-
 def load_tasks():
    try:
        with open("tasks.json", "r") as json_file:
            return json.load(json_file)
    except FileNotFoundError:
        return {}
-
-
-
 
 def teacher_info():
    def teacher_info(teacher_name, teacher_email, teacher_subject):
@@ -187,9 +165,6 @@ def teacher_info():
        # Save teacher information
        save_user_info(teacher_name, teacher_email, 'teacher', info)
 
-
-
-
 def add_task_for_teacher(teacher_subject):
    give_task = input("Do you want to give a task for one of your classes? (yes/no): ")
    if give_task.lower() == "yes":
@@ -221,8 +196,6 @@ def add_task_for_teacher(teacher_subject):
            json.dump(tasks, json_file)
 
 
-
-
 def display_teacher_tasks(teacher_name, teacher_email):
    for key, value in tasks.items():
        if key.startswith(f"{teacher_name}_{teacher_email}"):
@@ -252,9 +225,6 @@ def add_task_for_student(student_name):
    with open("tasks.json", "w") as json_file:
        json.dump(tasks, json_file)
 
-
-
-
 def mark_task_as_completed(student_name):
    student_tasks = tasks.get(student_name, [])
    if student_tasks:
@@ -279,9 +249,6 @@ def mark_task_as_completed(student_name):
    with open("tasks.json", "w") as json_file:
        json.dump(tasks, json_file)
 
-
-
-
 def display_completed_tasks(student_name):
    student_tasks = tasks.get(student_name, [])
    if student_tasks:
@@ -297,9 +264,6 @@ def display_completed_tasks(student_name):
            print("You have no completed tasks.")
    else:
        print("You have no tasks assigned.")
-
-
-
 
 def display_tasks(student_name):
    student_tasks = tasks.get(student_name, [])
@@ -319,9 +283,6 @@ def display_tasks(student_name):
    else:
        print("You have no tasks assigned.")
 
-
-
-
 def display_schedule(student_name):
    student_info = users_info.get(student_name, {})
    if student_info:
@@ -336,13 +297,6 @@ def display_schedule(student_name):
            print("You have no schedule.")
    else:
        print("No information found for this student.")
-
-
-
-
-
-
-
 
 def main():
    global users_info, tasks
