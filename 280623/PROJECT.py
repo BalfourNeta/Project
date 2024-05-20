@@ -307,9 +307,12 @@ def main():
     while True:
         user_type = input("\nAre you a teacher or a student? (Type 'teacher' or 'student', or 'exit' to quit): ")
         if user_type.lower() == "teacher":
+            teacher_name = input("Enter your name: ")
+            teacher_email = input("Enter your email address: ")
+            teacher_subject = input("Enter the subject you teach (Math/English): ")
             option = 0
-            while (option != 3):
-                teacher_info()
+            while option != 3:
+                teacher_info(teacher_name, teacher_email, teacher_subject)
                 print("\nChoose an option:")
                 print("1. Add a task")
                 print("2. See all tasks")
