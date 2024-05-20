@@ -342,8 +342,8 @@ def main():
                 # Save student information
                 save_user_info(student_name, email, 'student', {'grade': grade, 'class_number': class_number, 'schedule': schedule})
 
-            option = 0
-            while (option != 6):
+            option = ""
+            while (option != "6"):
                 print("\nChoose an option:")
                 print("1. Add a task")
                 print("2. Mark task as completed")
