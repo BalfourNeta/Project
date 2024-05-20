@@ -82,157 +82,163 @@ def load_tasks():
        return {}
 
 def teacher_info():
-    def teacher_info():
-        teacher_name = input("Enter your name: ")
-        teacher_email = input("Enter your email address: ")
+    teacher_name = input("Enter your name: ")
+    teacher_email = input("Enter your email address: ")
 
-        # Check if teacher information exists
-        if teacher_name in users_info and teacher_email in users_info[teacher_name] and 'teacher' in \
-                users_info[teacher_name][teacher_email]:
-            print("Welcome back, Teacher!")
-            # Display tasks given by the teacher
-            display_teacher_tasks(teacher_name, teacher_email)
+    # Check if teacher information exists
+    if teacher_name in users_info and teacher_email in users_info[teacher_name] and 'teacher' in users_info[teacher_name][teacher_email]:
+        print("Welcome back, Teacher!")
+        # Display tasks given by the teacher
+        display_teacher_tasks(teacher_name, teacher_email)
+    else:
+        teacher_subject = input("What subject do you teach? ")
+
+        if teacher_subject.lower() == "math":
+            math_teacher10 = []
+            math_teacher11 = []
+            math_teacher12 = []
+            math_classes10 = []
+            math_classes11 = []
+            math_classes12 = []
+
+            grade10 = input("Do you teach 10th grade? (yes/no): ")
+            if grade10.lower() == "yes":
+                math_teacher10 = input("How many units do you teach? (comma-separated): ").split(',')
+                math_teacher10 = [int(c) for c in math_teacher10]
+                for i in math_teacher10:
+                    if 3 <= i <= 5:
+                        break
+                    else:
+                        print("Points in math must be between 3 and 5.")
+                        math_teacher10 = input("Please enter valid units between 3 and 5: ").split(',')
+                        math_teacher10 = [int(c) for c in math_teacher10]
+                for i in math_teacher10:
+                    math_classes10 = input(f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
+                    math_classes10 = [int(c) for c in math_classes10]
+
+            grade11 = input("Do you teach 11th grade? (yes/no): ")
+            if grade11.lower() == "yes":
+                math_teacher11 = input("How many units do you teach? (comma-separated): ").split(',')
+                math_teacher11 = [int(c) for c in math_teacher11]
+                for i in math_teacher11:
+                    if 3 <= i <= 5:
+                        break
+                    else:
+                        print("Points in math must be between 3 and 5.")
+                        math_teacher11 = input("Please enter valid units between 3 and 5: ").split(',')
+                        math_teacher11 = [int(c) for c in math_teacher11]
+                for i in math_teacher11:
+                    math_classes11 = input(f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
+                    math_classes11 = [int(c) for c in math_classes11]
+
+            grade12 = input("Do you teach 12th grade? (yes/no): ")
+            if grade12.lower() == "yes":
+                math_teacher12 = input("How many units do you teach? (comma-separated): ").split(',')
+                math_teacher12 = [int(c) for c in math_teacher12]
+                for i in math_teacher12:
+                    if 3 <= i <= 5:
+                        break
+                    else:
+                        print("Points in math must be between 3 and 5.")
+                        math_teacher12 = input("Please enter valid units between 3 and 5: ").split(',')
+                        math_teacher12 = [int(c) for c in math_teacher12]
+                for i in math_teacher12:
+                    math_classes12 = input(f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
+                    math_classes12 = [int(c) for c in math_classes12]
+
+        elif teacher_subject.lower() == "english":
+            english_teacher10 = []
+            english_teacher11 = []
+            english_teacher12 = []
+            english_classes10 = []
+            english_classes11 = []
+            english_classes12 = []
+
+            grade10 = input("Do you teach 10th grade? (yes/no): ")
+            if grade10.lower() == "yes":
+                english_teacher10 = input("How many units do you teach? (comma-separated): ").split(',')
+                english_teacher10 = [int(c) for c in english_teacher10]
+                for i in english_teacher10:
+                    if 3 <= i <= 5:
+                        break
+                    else:
+                        print("Points in English must be between 3 and 5.")
+                        english_teacher10 = input("Please enter valid units between 3 and 5: ").split(',')
+                        english_teacher10 = [int(c) for c in english_teacher10]
+                for i in english_teacher10:
+                    english_classes10 = input(f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
+                    english_classes10 = [int(c) for c in english_classes10]
+
+            grade11 = input("Do you teach 11th grade? (yes/no): ")
+            if grade11.lower() == "yes":
+                english_teacher11 = input("How many units do you teach? (comma-separated): ").split(',')
+                english_teacher11 = [int(c) for c in english_teacher11]
+                for i in english_teacher11:
+                    if 3 <= i <= 5:
+                        break
+                    else:
+                        print("Points in English must be between 3 and 5.")
+                        english_teacher11 = input("Please enter valid units between 3 and 5: ").split(',')
+                        english_teacher11 = [int(c) for c in english_teacher11]
+                for i in english_teacher11:
+                    english_classes11 = input(f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
+                    english_classes11 = [int(c) for c in english_classes11]
+
+            grade12 = input("Do you teach 12th grade? (yes/no): ")
+            if grade12.lower() == "yes":
+                english_teacher12 = input("How many units do you teach? (comma-separated): ").split(',')
+                english_teacher12 = [int(c) for c in english_teacher12]
+                for i in english_teacher12:
+                    if 3 <= i <= 5:
+                        break
+                    else:
+                        print("Points in English must be between 3 and 5.")
+                        english_teacher12 = input("Please enter valid units between 3 and 5: ").split(',')
+                        english_teacher12 = [int(c) for c in english_teacher12]
+                for i in english_teacher12:
+                    english_classes12 = input(f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
+                    english_classes12 = [int(c) for c in english_classes12]
+
         else:
-            teacher_subject = input("What subject do you teach? ")
+            num_grade10 = []
+            num_grade11 = []
+            num_grade12 = []
 
-            if teacher_subject.lower() == "math":
-                grade10 = input("Do you teach 10th grade? (yes/no): ")
-                if grade10.lower() == "yes":
-                    math_teacher10 = input("How many units do you teach? (comma-separated): ").split(',')
-                    math_teacher10 = [int(c) for c in math_teacher10]
-                    for i in math_teacher10:
-                        if 3 <= i <= 5:
-                            break
-                        else:
-                            print("Points in math must be between 3 and 5.")
-                            math_teacher10 = input("Please enter valid units between 3 and 5: ").split(',')
-                            math_teacher10 = [int(c) for c in math_teacher10]
-                    for i in math_teacher10:
-                        math_classes10 = input(
-                            f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
-                        math_classes10 = [int(c) for c in math_classes10]
+            grade10 = input("Do you teach 10th grade? (yes/no): ")
+            if grade10.lower() == "yes":
+                num_grade10 = input("Enter the numbers of classes you teach for 10th grade (comma-separated): ").split(',')
+                num_grade10 = [int(c) for c in num_grade10]
 
-                grade11 = input("Do you teach 11th grade? (yes/no): ")
-                if grade11.lower() == "yes":
-                    math_teacher11 = input("How many units do you teach? (comma-separated): ").split(',')
-                    math_teacher11 = [int(c) for c in math_teacher11]
-                    for i in math_teacher11:
-                        if 3 <= i <= 5:
-                            break
-                        else:
-                            print("Points in math must be between 3 and 5.")
-                            math_teacher11 = input("Please enter valid units between 3 and 5: ").split(',')
-                            math_teacher11 = [int(c) for c in math_teacher11]
-                    for i in math_teacher11:
-                        math_classes11 = input(
-                            f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
-                        math_classes11 = [int(c) for c in math_classes11]
-                        # You might want to store or use math_classes11 for further logic
+            grade11 = input("Do you teach 11th grade? (yes/no): ")
+            if grade11.lower() == "yes":
+                num_grade11 = input("Enter the numbers of classes you teach for 11th grade (comma-separated): ").split(',')
+                num_grade11 = [int(c) for c in num_grade11]
 
-                grade12 = input("Do you teach 12th grade? (yes/no): ")
-                if grade12.lower() == "yes":
-                    math_teacher12 = input("How many units do you teach? (comma-separated): ").split(',')
-                    math_teacher12 = [int(c) for c in math_teacher12]
-                    for i in math_teacher12:
-                        if 3 <= i <= 5:
-                            break
-                        else:
-                            print("Points in math must be between 3 and 5.")
-                            math_teacher12 = input("Please enter valid units between 3 and 5: ").split(',')
-                            math_teacher12 = [int(c) for c in math_teacher12]
+            grade12 = input("Do you teach 12th grade? (yes/no): ")
+            if grade12.lower() == "yes":
+                num_grade12 = input("Enter the numbers of classes you teach for 12th grade (comma-separated): ").split(',')
+                num_grade12 = [int(c) for c in num_grade12]
 
-                    for i in math_teacher12:
-                        math_classes12 = input(
-                            f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
-                        math_classes12 = [int(c) for c in math_classes12]
+        # Save teacher information
+        save_user_info(teacher_name, teacher_email, 'teacher', {
+            'teacher_subject': teacher_subject,
+            'math_teacher10': math_teacher10 if math_teacher10 else None,
+            'math_teacher11': math_teacher11 if math_teacher11 else None,
+            'math_teacher12': math_teacher12 if math_teacher12 else None,
+            'math_classes10': math_classes10 if math_classes10 else None,
+            'math_classes11': math_classes11 if math_classes11 else None,
+            'math_classes12': math_classes12 if math_classes12 else None,
+            'english_teacher10': english_teacher10 if english_teacher10 else None,
+            'english_teacher11': english_teacher11 if english_teacher11 else None,
+            'english_teacher12': english_teacher12 if english_teacher12 else None,
+            'english_classes10': english_classes10 if english_classes10 else None,
+            'english_classes11': english_classes11 if english_classes11 else None,
+            'english_classes12': english_classes12 if english_classes12 else None,
+            'num_grade10': num_grade10 if num_grade10 else None,
+            'num_grade11': num_grade11 if num_grade11 else None,
+            'num_grade12': num_grade12 if num_grade12 else None
+        })
 
-            elif teacher_subject.lower() == "english":
-                grade10 = input("Do you teach 10th grade? (yes/no): ")
-                if grade10.lower() == "yes":
-                    english_teacher10 = input("How many units do you teach? (comma-separated): ").split(',')
-                    english_teacher10 = [int(c) for c in english_teacher10]
-                    for i in english_teacher10:
-                        if 3 <= i <= 5:
-                            break
-                        else:
-                            print("Points in English must be between 3 and 5.")
-                            english_teacher10 = input("Please enter valid units between 3 and 5: ").split(',')
-                            english_teacher10 = [int(c) for c in english_teacher10]
-                    for i in english_teacher10:
-                        english_classes10 = input(
-                            f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
-                        english_classes10 = [int(c) for c in english_classes10]
-
-                grade11 = input("Do you teach 11th grade? (yes/no): ")
-                if grade11.lower() == "yes":
-                    english_teacher11 = input("How many units do you teach? (comma-separated): ").split(',')
-                    english_teacher11 = [int(c) for c in english_teacher11]
-                    for i in english_teacher11:
-                        if 3 <= i <= 5:
-                            break
-                        else:
-                            print("Points in English must be between 3 and 5.")
-                            english_teacher11 = input("Please enter valid units between 3 and 5: ").split(',')
-                            english_teacher11 = [int(c) for c in english_teacher11]
-                    for i in english_teacher11:
-                        english_classes11 = input(
-                            f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
-                        english_classes11 = [int(c) for c in english_classes11]
-
-                grade12 = input("Do you teach 12th grade? (yes/no): ")
-                if grade12.lower() == "yes":
-                    english_teacher12 = input("How many units do you teach? (comma-separated): ").split(',')
-                    english_teacher12 = [int(c) for c in english_teacher12]
-                    for i in english_teacher12:
-                        if 3 <= i <= 5:
-                            break
-                        else:
-                            print("Points in English must be between 3 and 5.")
-                            english_teacher12 = input("Please enter valid units between 3 and 5: ").split(',')
-                            english_teacher12 = [int(c) for c in english_teacher12]
-                    for i in english_teacher12:
-                        english_classes12 = input(
-                            f"Enter the numbers of classes you teach for {i} units (comma-separated): ").split(',')
-                        english_classes12 = [int(c) for c in english_classes12]
-
-            else:
-                grade10 = input("Do you teach 10th grade? (yes/no): ")
-                if grade10.lower() == "yes":
-                    num_grade10 = input(
-                        "Enter the numbers of classes you teach for 10th grade (comma-separated): ").split(',')
-                    num_grade10 = [int(c) for c in num_grade10]
-
-                grade11 = input("Do you teach 11th grade? (yes/no): ")
-                if grade11.lower() == "yes":
-                    num_grade11 = input(
-                        "Enter the numbers of classes you teach for 11th grade (comma-separated): ").split(',')
-                    num_grade11 = [int(c) for c in num_grade11]
-
-                grade12 = input("Do you teach 12th grade? (yes/no): ")
-                if grade12.lower() == "yes":
-                    num_grade12 = input(
-                        "Enter the numbers of classes you teach for 10th grade (comma-separated): ").split(',')
-                    num_grade12 = [int(c) for c in num_grade12]
-
-            # Save teacher information
-            save_user_info(teacher_name, teacher_email, 'teacher', {
-                'teacher_subject': teacher_subject,
-                'math_teacher10': math_teacher10 if 'math_teacher10' in locals() else None,
-                'math_teacher11': math_teacher11 if 'math_teacher11' in locals() else None,
-                'math_teacher12': math_teacher12 if 'math_teacher12' in locals() else None,
-                'math_classes10': math_classes10 if 'math_classes10' in locals() else None,
-                'math_classes11': math_classes11 if 'math_classes11' in locals() else None,
-                'math_classes12': math_classes12 if 'math_classes12' in locals() else None,
-                'english_teacher10': english_teacher10 if 'english_teacher10' in locals() else None,
-                'english_teacher11': english_teacher11 if 'english_teacher11' in locals() else None,
-                'english_teacher12': english_teacher12 if 'english_teacher12' in locals() else None,
-                'english_classes10': english_classes10 if 'english_classes10' in locals() else None,
-                'english_classes11': english_classes11 if 'english_classes11' in locals() else None,
-                'english_classes12': english_classes12 if 'english_classes12' in locals() else None,
-                'num_grade10': num_grade10 if 'num_grade10' in locals() else None,
-                'num_grade11': num_grade11 if 'num_grade11' in locals() else None,
-                'num_grade12': num_grade12 if 'num_grade12' in locals() else None
-            })
 def add_task_for_teacher(teacher_subject):
    give_task = input("Do you want to give a task for one of your classes? (yes/no): ")
    if give_task.lower() == "yes":
@@ -381,7 +387,7 @@ def main():
            teacher_name = input("Enter your name: ")
            teacher_email = input("Enter your email address: ")
            teacher_subject = input("Enter the subject you teach (Math/English): ")
-           while true:
+           while True:
                teacher_info(teacher_name, teacher_email, teacher_subject)
                print("\nChoose an option:")
                print("1. Add a task")
@@ -417,7 +423,7 @@ def main():
                save_user_info(student_name, email, 'student', {'grade': grade, 'class_number': class_number, 'schedule': schedule})
 
 
-           while true:
+           while True:
                print("\nChoose an option:")
                print("1. Add a task")
                print("2. Mark task as completed")
@@ -449,4 +455,4 @@ def main():
 
 
 if __name__ == "__main__":
-   main()
+    main()
