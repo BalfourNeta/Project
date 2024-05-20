@@ -436,11 +436,11 @@ def main():
                     break
                 else:
                     print("Invalid option. Please enter a number between 1 and 6.")
-            elif user_type.lower() == "exit":
-                print("Exiting the program.")
-                break
-            else:
-                print("Invalid choice. Please enter 'teacher', 'student', or 'exit'.")
+        elif user_type.lower() == "exit":
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please enter 'teacher', 'student', or 'exit'.")
 
 
 if __name__ == "__main__":
