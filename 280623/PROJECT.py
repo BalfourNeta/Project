@@ -1,6 +1,6 @@
 import json
 
-gkjh
+gkjhhjghj
 class ClassInstance:
     def __init__(self, major1, major2, points_math, points_english):
         self.major1 = major1
